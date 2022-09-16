@@ -17,7 +17,7 @@ window.onload = (e) => {
   mainFunction(1000);
 };
 
-var socket = io("ws://voice-chat-01.herokuapp.com");
+var socket = io("wss://voice-chat-01.herokuapp.com");
 socket.emit("userInformation", userStatus);
 
 function mainFunction(time) {
