@@ -4,6 +4,8 @@ const cors = require('cors')
 const handlebars = require("express-handlebars");
 const http = require("http").Server(app);
 const io = require("socket.io")(http, { origins: '*:*'});
+const port = parseInt(process.env.PORT || "8080");
+
 
 //To holding users information 
 const socketsStatus = {};
@@ -47,6 +49,6 @@ io.on("connection", function (socket) {
   
   });
 
-http.listen(80, () => {
-  console.log("the app is run in port 80!");
+http.listen(port, () => {
+  console.log("the app is run in port ", port);
 });
